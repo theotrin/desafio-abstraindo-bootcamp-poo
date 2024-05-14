@@ -1,29 +1,14 @@
 package br.com.theotrin.desafio.dominio;
 
-public class Curso {
-    private String titlo;
-    private String descricao;
+public class Curso extends Conteudo {
     private int cargaHoraria;
-
-    public String getTitlo() {
-        return titlo;
-    }
 
     public Curso() {
     }
-
-    public void setTitlo(String titlo) {
-        this.titlo = titlo;
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO * getCargaHoraria();
     }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
     public int getCargaHoraria() {
         return cargaHoraria;
     }
@@ -35,10 +20,11 @@ public class Curso {
     @Override
     public String toString() {
         return "Curso{" +
-                "titlo='" + titlo + '\'' +
-                ", descricao='" + descricao + '\'' +
+                "Titlo: '" + getTitulo() + '\'' +
+                ", Descricao: '" + getDescricao() + '\'' +
                 ", cargaHoraria=" + cargaHoraria +
                 '}';
     }
+
 }
 
